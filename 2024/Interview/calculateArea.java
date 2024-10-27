@@ -22,6 +22,16 @@ public interface IShape{
 }  
 public class Rectangle implements Shape{
     double calculateArea(shape){
+        for (Shape shape : shapes) {
+            if (shape instanceof Rectangle) {
+				Rectangle rect = (Rectangle) shape;
+                area += (rect.getLength() * rect.getHeight());
+            } else if (shape instanceof Circle) {
+			    Circle circle = (Circle) shape;
+                area += circle.getRadius() * cirlce.getRadius() * Math.PI;
+            } else {
+			    throw new RuntimeException("Shape not supported");
+            }
        return area;
     }
 }
@@ -48,20 +58,16 @@ public class ShapeManager{
         this.shape = shape;
     }
 
-      public double calculateArea(Shape shapes) {
-        return shape.calculateArea(
-       
-        );
-     
+      public double calculateArea(IShape shapes) {
+        return shape.calculateArea();
     }
 }
 
 public void Main(){
 
-    ShapeManager shapeManager = new ShapeManager(new Circle());
+    ShapeManager shapeManager = new ShapeManager(new Circle(),new Rectangle());
     List<Shape> shapes  = new Shape(){new }
     for (Shape shape : shapes) {
-
     shapeManager.calculateArea()
 }
   
