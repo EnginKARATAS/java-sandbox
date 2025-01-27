@@ -2,7 +2,8 @@ package com.example;
 
 import com.rabbitmq.client.*;
 
-public class Recieve {
+public class Receive
+ {
     private final static String QUEUE_NAME = "hello";
 
     public static void main(String[] argv) throws Exception {
