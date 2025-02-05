@@ -1,5 +1,5 @@
 
-public class Main {
+public class CountAndSort {
   public static void main(String[] args) {
     String input = "aaggbcee";
 
@@ -23,6 +23,7 @@ public class Main {
     }*/
     String input1 = "aaggbcee".repeat(3);
 
-    System.out.println(String.valueOf(input).repeat(2));
+    System.out.println(String.valueOf(input).repeat(2
+    ));
   }
 }

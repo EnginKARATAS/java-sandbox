@@ -15,7 +15,6 @@
         return area;
     }
 
-
 //implementation
 public interface IShape{
     double calculateArea();
