@@ -8,7 +8,33 @@ public class App {
         // three();
         // four();//reverse string
         // five(); // fibonacci
-        six();
+        // six();//matrix
+        // seven();// polyndrome
+        eight();
+    }
+
+    public static void eight() {
+    }
+
+    public static void seven() {
+        Scanner scan = new Scanner(System.in);
+        String sayi = scan.next();
+        // engne
+        // i0 == in
+        // i1 == in-1
+        // i2 == in-2
+        boolean isPolyndrome = true;
+        int stop = sayi.length() / 2;
+        System.out.println(stop);
+        for (int i = 0; i < stop; i++) {
+            char letter = sayi.charAt(i);
+            char letterM = sayi.charAt(sayi.length() - 1 - i);
+            System.out.print(letter + " " + letterM);
+            System.out.println();
+            if (letter != letterM)
+                isPolyndrome = false;
+        }
+        System.out.println("isPolyndrome: " + isPolyndrome);
     }
 
     public static void six() {
