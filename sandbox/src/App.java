@@ -10,10 +10,20 @@ public class App {
         // five(); // fibonacci
         // six();//matrix
         // seven();// polyndrome
-        eight();
+        eight();//word count
     }
 
     public static void eight() {
+        Scanner scan = new Scanner(System.in);
+        String sayi = scan.nextLine();
+        short count = 0;
+        for (int i = 0; i < sayi.length(); i++) {
+            char letter = sayi.charAt(i);
+            if (letter == ' ') {
+                count++;
+            }
+        }
+        System.out.println(count + 1);
     }
 
     public static void seven() {
