@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class App {
@@ -6,7 +7,23 @@ public class App {
         // two();
         // three();
         // four();//reverse string
-        //five(); // fibonacci
+        // five(); // fibonacci
+        six();
+    }
+
+    public static void six() {
+        int[][] m1 = new int[3][3];
+        int[][] m2 = new int[3][3];
+        int[][] t = new int[3][3];
+        Random r = new Random();
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                m1[i][j] = r.nextInt(5);
+                System.out.print(m1[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 
     public static void five() {
