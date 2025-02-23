@@ -10,7 +10,7 @@ public class App {
         // five(); // fibonacci
         // six();//matrix
         // seven();// polyndrome
-        eight();//word count
+        //eight();//word count
     }
 
     public static void eight() {
