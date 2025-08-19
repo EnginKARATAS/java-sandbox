@@ -1,7 +1,16 @@
 import java.util.Random;
 import java.util.Scanner;
 
+
+interface Printable {
+    String print(String prefix, String suffix);
+}
+
+
 public class App {
+
+ 
+
     public static void main(String[] args) throws Exception {
         // one();
         // two();
@@ -10,7 +19,11 @@ public class App {
         // five(); // fibonacci
         // six();//matrix
         // seven();// polyndrome
-        //eight();//word count
+        // eight();//word count
+        // ----------
+        Printable printable = (p, s) ->  "Meow" + p.toString() + " " + s.toString();
+        printThing(printable);
+
     }
 
     public static void eight() {
