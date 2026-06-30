@@ -1,50 +1,58 @@
-
-import java.math.BigDecimal;
-
+import java.util.*;
+import java.util.stream.*;
 
 public class Main {
+
+    static class Order {
+
+        Long id;
+        Long customerId;
+        double amount;
+        String status;
+
+        public Order(Long id, Long customerId, double amount, String status) {
+            this.id = id;
+            this.customerId = customerId;
+            this.amount = amount;
+            this.status = status;
+        }
+    }
+
+
+    /**TODO: Implement the logic here
+     *Requirements:
+     * 1. Filter only orders with status "PAID"
+     * 2. Group orders by customerId
+     * 3. Calculate total amount per customer
+     * 
+     * Expected reult:
+     * Map<customerId, totalPaidAmount>
+     **/
+
+
     public static void main(String[] args) {
-        // A üzeri b yi bulacak bi fonksiyon sordu çok bi detay yok
-        System.out.println(aOverB(2, 1));
-        System.out.println();
-        System.out.println(isPolyndrome("kayak"));
-        int[] nums = new int[]{5,4,3,2,1};
-        BigDecimal a = new BigDecimal("123.456");
-        System.out.println(a);
-        System.out.println(findSecondBiggest(nums));
-    }
 
-    static boolean findSecondBiggest(int[] nums){
-        //find biggest, and than call function without biggest
-        //sorted mi nasıl bulursun?
-        boolean isSortedAsc = false;
-        for (int i = 0; i < nums.length-1; i++) {
-            if (nums[i]<nums[i+1]) {
-                isSortedAsc = true;
-            }
-        }
-        return isSortedAsc;
-    }
-    static boolean isPolyndrome(String metin) {
-        boolean val = true;
-        for (int i = 0; i < metin.length() / 2; i++) {
-            if (metin.charAt(i)!=metin.charAt(metin.length()-1-i)) {
-                val = false;
-            }
-        }
-        return val;
-    }
+        List<Order> orders = new ArrayList<>();
 
-    static int aOverB(int a, int b) {
-        if (b == 0)
-            return 1;
-        if (a == 0)
-            throw new Error("A 0 olamaz");
-        int res = 1;
-        for (int i = 0; i < b; i++) {
-            res = res * a;
-        }
-        return res;
+        orders.add(new Order(1L, 101L, 100, "PAID"));
+        orders.add(new Order(2L, 101L, 50, "CREATED"));
+        orders.add(new Order(3L, 102L, 200, "PAID"));
+        orders.add(new Order(4L, 101L, 70, "PAID"));
+
+        System.out.println(orders.stream()
+        .filter(i->i.status == "PAID")
+        .mapToDouble(i -> i.amount)
+        .collect(Collectors.groupingBy(i->i.status))
+
+        
+    
+    );
+        /**TODO: Call the method here and print result
+         *
+         *Print the result in the following format:
+         *Customer 101 -> 170
+         *Customer 102 -> 200
+         * 
+        **/
     }
 }
-
